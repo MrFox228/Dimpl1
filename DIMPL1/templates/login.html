@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #262626;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .block {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 15px;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: white;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+  <div class="block">
+      <h1>Login</h1>
+      {% if error %}
+          <p class="error">{{ error }}</p>
+      {% endif %}
+      <form action="/login" method="post">  
+        <input type="text" id="username" name="username" placeholder="Логин/Имя пользователя" required>
+        <input type="email" id="email" name="email" placeholder="Почта" required>
+        <input type="password" id="password" name="password" placeholder="Пароль" required><br><br>
+        <button type="submit">Войти</button>
+      </form>
+  </div>
+</body>
+</html>
